@@ -1,0 +1,32 @@
+import random
+option=['Rock','Paper','Scissor']
+print("\nWelcome to Rock Paper Scissor Game!")
+print("Rules: Rock beats Scissor, Scissor beats Paper, Paper beats Rock.")
+print("You will be playing against the computer. You have 5 chances to win.")
+user_score=0
+computer_score=0
+chance=1
+while chance<=5:
+    print("\nAttempt", chance, "of 5")
+    user_choice=input("Enter your choice (Rock/Paper/Scissor): ").capitalize()
+    if user_choice not in option:
+        print("Invalid choice! Please choose Rock, Paper, or Scissor.")
+        continue
+    computer_choice=random.choice(option)
+    print("Computer chose:", computer_choice)
+    if user_choice==computer_choice:
+        print("It's a tie!")
+    elif (user_choice=='Rock' and computer_choice=='Scissor') or (user_choice=='Scissor' and computer_choice=='Paper') or (user_choice=='Paper' and computer_choice=='Rock'):
+        print("You win this round!")
+        user_score+=1
+    else:
+        print("Computer wins this round!")
+        computer_score+=1
+    chance+=1
+
+print(f"\nFinal Scores:\nYou: {user_score}\nComputer: {computer_score}")
+print("Game Over!")
+if user_score>computer_score:
+    print("Congratulations! You won the game!\n")
+elif user_score<computer_score: 
+    print("Computer won the game! Better luck next time.\n")
