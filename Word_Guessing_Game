@@ -1,0 +1,22 @@
+import random
+words=["rainbow", "algorithm", "society", "ocean", "mathematics", "harmony", "horizon", "circuit", "culture", "thunder", "philosophy", "economy", "curiosity", "forest", "network", "justice", "glacier", "engine", "empathy", "history", "architecture", "courage", "process", "twilight", "freedom"]
+word=random.choice(words)
+print("\nIn this game, you would get 5 chances to guess a word from the given set of words.")
+print(words)
+name=input("\nEnter your name: ")
+print("All The Best!", name)
+chance=1
+while (chance<6):
+    print("\nAttempt", chance, "of 5")
+    guess=input("Enter your guess: ")
+    if (word==guess and guess in words):
+        print("Congrats.. You guessed the word right!\n")
+        break
+    elif (word!=guess and guess in words):
+        print("Your guess is wrong.")
+    elif (guess not in words):
+        print("You should guess a word from the given set of words.")
+    chance=chance+1
+    print("You have", 5-chance+1, "chances left.")
+if (chance==6):
+    print("\nYou have exhausted all your chances. The word was", word, ".")
