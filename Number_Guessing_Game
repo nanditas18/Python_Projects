@@ -1,0 +1,19 @@
+import random
+print("\nIn this game, you would get 5 chances to guess a number (in the range 1 to 50).")
+print("All The Best!")
+number=random.randint(1,50)
+chance=1
+while (chance<6):
+    print("\nAttempt", chance, "of 5")
+    guess=int(input("Enter your guess: "))
+    if (number==guess):
+        print("Congrats.. You guessed the number right!\n")
+        break
+    elif (number!=guess and number<guess):
+        print("Your guess is too high.")
+    elif (number!=guess and number>guess):
+        print("Your guess is too low.")
+    chance=chance+1
+    print("You have", 5-chance+1, "chances left.")
+if (chance==6):
+    print("\nYou have exhausted all your chances. The number was", number, ".")
