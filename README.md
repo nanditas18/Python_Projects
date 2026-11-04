@@ -8,8 +8,8 @@ A collection of lightweight, practical, and fun Python projects designed to prac
 
 | Project | Description | Key Concepts |
 | :--- | :--- | :--- |
-| **[Guess the Number](./Number_Guessing_Game)** | Interactive CLI game where the user guesses a randomly generated number with hints. | Loops, Conditionals, `random` module |
-| **[Password Generator](./password-generator)** | Secure random password generator with customizable length and symbol inclusion. | Strings, Lists, `secrets` / `random` |
+| **[Guess the Number](./Number_Guessing_Game)** | A fun command-line Python game where the computer selects a random secret number, and the player tries to guess it within a limited number of attempts. | Loops, Conditionals, 'random' module |
+| **[Guess the Word](./Word_Guessing_Game)** | A command-line Python word guessing game where players have five attempts to correctly guess a randomly selected secret word from a predefined list. | Loops, Conditionals, and the 'random' module. |
 | **[To-Do List Manager](./todo-cli)** | Terminal-based task manager to add, view, and delete tasks persistently. | File I/O (`.txt` or `.json`), Functions |
 | **[Calculator App](./simple-calculator)** | Command-line calculator supporting basic arithmetic and error handling. | Functions, Exception Handling (`try/except`) |
 | **[Weather CLI (Mock)](./weather-cli)** | Fetches and displays mock or live weather updates using public APIs. | APIs, `requests`, JSON parsing |
