@@ -8,7 +8,7 @@ A collection of lightweight, practical, and fun Python projects designed to prac
 
 | Project | Description | Key Concepts |
 | :--- | :--- | :--- |
-| **[Guess the Number](./number-guessing)** | Interactive CLI game where the user guesses a randomly generated number with hints. | Loops, Conditionals, `random` module |
+| **[Guess the Number](./Number_Guessing_Game)** | Interactive CLI game where the user guesses a randomly generated number with hints. | Loops, Conditionals, `random` module |
 | **[Password Generator](./password-generator)** | Secure random password generator with customizable length and symbol inclusion. | Strings, Lists, `secrets` / `random` |
 | **[To-Do List Manager](./todo-cli)** | Terminal-based task manager to add, view, and delete tasks persistently. | File I/O (`.txt` or `.json`), Functions |
 | **[Calculator App](./simple-calculator)** | Command-line calculator supporting basic arithmetic and error handling. | Functions, Exception Handling (`try/except`) |
