@@ -1,0 +1,53 @@
+import random
+def play_game():
+    current = 0
+    print("\nWelcome to the 21 Number Game!")
+    print("Rules: Take turns counting up to 3 consecutive numbers. Whoever says 21 loses!")
+    
+    while current < 21:
+        print(f"\nCurrent count is: {current}")
+        try:
+            user_input = input("Your turn (enter 1 to 3 numbers separated by space): ")
+            player_moves = [int(x) for x in user_input.split()]
+        except ValueError:
+            print("Invalid input! Please enter valid numbers.")
+            continue
+        if not (1 <= len(player_moves) <= 3):
+            print("You must choose between 1 and 3 numbers per turn.")
+            continue
+            
+        expected = current + 1
+        valid = True
+        for num in player_moves:
+            if num != expected:
+                valid = False
+                break
+            expected += 1
+            
+        if not valid or player_moves[0] != current + 1:
+            print(f"Invalid sequence! Numbers must be consecutive starting from {current + 1}.")
+            continue
+        current = player_moves[-1]
+        if current >= 21:
+            print(f"\nYou said {current}! You lose the game. Computer wins!\n")
+            return
+        print(f"Current count is: {current}")
+        print("Computer's turn...")
+        target = current + 4 - (current % 4)
+        if target > 21:
+            target = 21
+        comp_count = target - current
+        if comp_count < 1 or comp_count > 3:
+            comp_count = random.randint(1, 3)
+        comp_moves = []
+        for _ in range(comp_count):
+            if current < 21:
+                current += 1
+                comp_moves.append(current)
+        print(f"Computer says: {' '.join(map(str, comp_moves))}")
+        if current >= 21:
+            print(f"\nComputer said {current}! Computer loses. You win!\n")
+            return
+
+if __name__ == "__main__":
+    play_game()
