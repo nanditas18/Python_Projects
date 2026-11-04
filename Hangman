@@ -1,0 +1,42 @@
+import random
+words=["apple","beach","chair","dance","earth","fruit","grape","house","juice","lemon","mouse","night","paper","queen","river","smile","train","water","bread","plant"]
+word=random.choice(words)
+display=["_" for _ in word]
+guessed=[]
+chance=6
+stages=[
+"_____\n|    |\n|\n|\n|\n|\n============",
+"_____\n|    |\n|    O\n|\n|\n|\n============",
+"_____\n|    |\n|    O\n|    |\n|\n|\n============",
+"_____\n|    |\n|    O\n|   /|\n|\n|\n============",
+"_____\n|    |\n|    O\n|   /|\\\n|\n|\n============",
+"_____\n|    |\n|    O\n|   /|\\\n|   /\n|\n============",
+"_____\n|    |\n|    O\n|   /|\\\n|   / \\\n|\n============"
+]
+print("Let's play Hangman!")
+print("The word has",len(word),"letters.")
+while chance>0:
+    print("\nWord:"," ".join(display))
+    print("Chances left:",chance)
+    guess=input("Enter your guess: ").lower()
+    if len(guess)!=1 or not guess.isalpha():
+        print("Enter a single valid letter.")
+        continue
+    if guess in guessed:
+        print("Already guessed!")
+        continue
+    guessed.append(guess)
+    if guess in word:
+        print("Correct!")
+        for i in range(len(word)):
+            if word[i]==guess:
+                display[i]=guess
+        if "_" not in display:
+            print("You won! The word was",word)
+            break
+    else:
+        print("Wrong!")
+        chance-=1
+    print(stages[6-chance])
+if chance==0:
+    print("Game over! The word was",word)
